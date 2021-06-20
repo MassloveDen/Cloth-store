@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title | title }}</title>
+</head>
+<body>
+    <h1>{{ head }}</h1>
+    <p> {{usver}}</p>
+    {% for i in list %}
+        <ul>
+            <h4>{{ i }}</h4>
+        </ul>
+
+    {% endfor %}
+    {% for i in list %}
+        <h4>{{ i.name }}</h4>
+        <p>{{ i.price }} руб.</p>
+    {% endfor %}
+    {% if sails %}
+    <h3 style="color: red;">Товары по скидке: </h3>
+        {% for i in prod_on_sails %}
+        <h4>{{ i.name }}</h4>
+        <p>{{ i.price }} руб.</p>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
