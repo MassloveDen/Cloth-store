@@ -1,0 +1,67 @@
+[
+  {
+    "model": "products.production",
+    "pk": 1,
+    "fields": {
+      "name": "Худи черного цвета с монограммами adidas Originals",
+      "image": "production_images/Adidas-hoodie.png",
+      "details": "",
+      "desc": "Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.",
+      "price": "6090.00",
+      "quant": 3,
+      "categor": 1
+    }
+  },
+  {
+    "model": "products.production",
+    "pk": 2,
+    "fields": {
+      "name": "Синяя куртка The North Face",
+      "image": "production_images/Blue-jacket-The-North-Face.png",
+      "details": "",
+      "desc": "Гладкая ткань. Водонепроницаемое покрытие. Легкий и теплый пухов",
+      "price": "23725.00",
+      "quant": 7,
+      "categor": 1
+    }
+  },
+  {
+    "model": "products.production",
+    "pk": 3,
+    "fields": {
+      "name": "Коричневый спортивный oversized-топ ASOS DESIGN",
+      "image": "production_images/Brown-sports-oversized-top-ASOS-DESIGN.png",
+      "details": "",
+      "desc": "Материал с плюшевой текстурой. Удобный и мягкий.",
+      "price": "3390.00",
+      "quant": 5,
+      "categor": 1
+    }
+  },
+  {
+    "model": "products.production",
+    "pk": 4,
+    "fields": {
+      "name": "Черный рюкзак Nike Heritage",
+      "image": "production_images/Black-Nike-Heritage-backpack.png",
+      "details": "",
+      "desc": "Плотная ткань. Легкий материал.",
+      "price": "2340.00",
+      "quant": 10,
+      "categor": 2
+    }
+  },
+  {
+    "model": "products.production",
+    "pk": 5,
+    "fields": {
+      "name": "Темно-синие широкие строгие брюки ASOS DESIGN",
+      "image": "production_images/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png",
+      "details": "",
+      "desc": "Легкая эластичная ткань сирсакер Фактурная ткань.",
+      "price": "2890.00",
+      "quant": 11,
+      "categor": 2
+    }
+  }
+]
