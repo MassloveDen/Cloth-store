@@ -3,15 +3,31 @@
     "model": "products.catalog",
     "pk": 1,
     "fields": {
-      "name": "Одежда",
-      "details": "Описание для одежды"
+      "name": "РќРѕРІРёРЅРєРё",
+      "details": ""
     }
   },
   {
     "model": "products.catalog",
     "pk": 2,
     "fields": {
-      "name": "Новинки",
+      "name": "РћРґРµР¶РґР°",
+      "details": ""
+    }
+  },
+  {
+    "model": "products.catalog",
+    "pk": 3,
+    "fields": {
+      "name": "РћР±СѓРІСЊ",
+      "details": ""
+    }
+  },
+  {
+    "model": "products.catalog",
+    "pk": 4,
+    "fields": {
+      "name": "РђРєСЃРµСЃСЃСѓР°СЂС‹",
       "details": ""
     }
   }
