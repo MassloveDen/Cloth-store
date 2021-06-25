@@ -1,3 +1,5 @@
+{% extends 'products/body.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +10,11 @@
     <title>Store - Профиль</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    {% block css %}
     <!-- Custom styles for this template -->
-    <link href="../css/profile.css" rel="stylesheet">
+        <link href="{% static 'css/profile.css' %}" rel="stylesheet">
+    {% endblock %}
 </head>
 <body class="bg-light">
 <!-- Navigation -->
