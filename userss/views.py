@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse
-from django.contrib import auth
+from django.contrib import auth, messages
 from userss.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 
 # Create your views here.
@@ -28,6 +28,7 @@ def reg(request):
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Registration success!')
             return HttpResponseRedirect(reverse('userss:log'))
         else:
             print(form.errors)
@@ -47,4 +48,6 @@ def profile(request):
     context = {'form':form}
     return render(request, 'userss/myprofile.html', context)
 
-
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect(reverse('home'))
