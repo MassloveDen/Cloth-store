@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+from userss.models import User
 
 
 class Catalog(models.Model):
@@ -28,4 +29,16 @@ class Production(models.Model):
 
     def __str__(self):
         return f'{self.name}|{self.categor.name}'
+
+class Basket(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Production, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=0)
+    created_timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'Корзина'
+
+    def __str__(self):
+        return f'Basket for {self.user.username}| Product {self.product.name}'
 
