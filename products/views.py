@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from products.models import Production,Catalog, Basket
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -19,6 +19,7 @@ def merch(request):
     }
     return render(request, 'products/merch.html', cont)
 
+@login_required
 def basket_add(request, product_id):
     product = Production.objects.get(id=product_id)
     baskets = Basket.objects.filter(user=request.user, product=product)
@@ -33,6 +34,8 @@ def basket_add(request, product_id):
         basket.save()
         return HttpResponseRedirect(current_page)
 
+
+@login_required
 def basket_delete(request, id):
     basket = Basket.objects.get(id=id)
     basket.delete()
