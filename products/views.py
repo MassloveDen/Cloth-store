@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponseRedirect
 from products.models import Production,Catalog, Basket
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+
 # Create your views here.
 
 
@@ -11,14 +13,18 @@ def home(request):
     return render(request, 'products/home.html', cont)
 
 
-def merch(request):
-    cont = {
-        'title': 'Каталог товаров',
+def merch(request, categor_id=None, page = 1):
+    contex = {'title': 'Каталог товаров',
         'categor': Catalog.objects.all(),
-        'merch': Production.objects.all(),
-    }
-    return render(request, 'products/merch.html', cont)
-
+        }
+    if categor_id:
+        products = Production.objects.filter(categor_id=categor_id)
+    else:
+        products = Production.objects.all()
+    paginator = Paginator(products, 3)
+    products_paginator = paginator.page(page)
+    contex.update({'merch': products_paginator})
+    return render(request, 'products/merch.html', contex)
 @login_required
 def basket_add(request, product_id):
     product = Production.objects.get(id=product_id)
